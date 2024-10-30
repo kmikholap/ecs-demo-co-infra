@@ -51,8 +51,6 @@ spec:
   path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
-  dependsOn:
-    - name: wt-demo-app-base
   patches:
     - patch: |
         - op: replace
