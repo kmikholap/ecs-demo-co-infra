@@ -28,7 +28,7 @@ metadata:
   name: wt-demo-app-base
   namespace: default
 spec:
-  interval: 1m
+  interval: 10m
   sourceRef:
     kind: GitRepository
     name: ecs-demo-co-apps
