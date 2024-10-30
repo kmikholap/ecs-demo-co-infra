@@ -11,8 +11,3 @@ spec:
   path: ./sites/east-site
   prune: true
   timeout: 1m
-resources:
-  - ../../../base/wt-monitoring-app
-  - e101-config-map.yaml
-patches:
-  - path: e101-config.yaml
