@@ -36,5 +36,4 @@ spec:
   path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
-  patchesStrategicMerge:
-    - e101-config.yaml  
+  
