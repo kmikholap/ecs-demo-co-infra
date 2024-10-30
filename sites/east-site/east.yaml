@@ -36,10 +36,10 @@ spec:
   path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
+  bases:
+    - ../../base
+    - e101-caonig-map.yaml
   patches:
     - path: e101-config.yaml
-      target: 
-        SITE_NAME: "us-east-onshore-site-01"
-        TURBINE_NAME: "turbine-e101"
         
 
