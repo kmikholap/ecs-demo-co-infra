@@ -38,5 +38,5 @@ spec:
   timeout: 1m
   patch:
   patches:
-    - path: e101-config.yaml
+    - path: ./sites/east-site/wt-monitoring-app/turbine-e101/e101-config.yaml
 
