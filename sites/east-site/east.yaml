@@ -64,6 +64,9 @@ spec:
         - op: replace
           path: /spec/template/spec/containers/0/env/2/valueFrom/configMapKeyRef/name
           value: backend-us-east-site-01-e101
+        - op: replace
+          path: /spec/template/spec/containers/0/env/3/valueFrom/configMapKeyRef/name
+          value: backend-us-east-site-01-e101
       target:
         kind: Deployment
         name: backend-api
