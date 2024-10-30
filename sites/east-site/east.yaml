@@ -64,7 +64,7 @@ spec:
          value: e101-config-map
      target:
        kind: Deployment
-       name: backend-api
+       name: backend-api-patch
        namespace: default
 
 
