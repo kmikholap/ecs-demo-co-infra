@@ -8,6 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: ecs-demo-co-apps
-  path: ./sites/east-site
+  path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
