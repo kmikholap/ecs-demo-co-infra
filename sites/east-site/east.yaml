@@ -69,7 +69,7 @@ spec:
           value: backend-us-east-site-01-e101
       target:
         kind: Deployment
-        name: backend-api
+        name: backend-api-kustomization
         namespace: default
 
 
