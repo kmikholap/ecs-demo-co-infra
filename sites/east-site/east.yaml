@@ -53,18 +53,18 @@ spec:
   timeout: 1m
   patches:
    - patch: |
-       - op: replace
-         path: /spec/template/spec/containers/0/env/0/valueFrom/configMapKeyRef/name
-         value: e101-config-map
-       - op: replace
-         path: /spec/template/spec/containers/0/env/1/valueFrom/configMapKeyRef/name
-         value: e101-config-map
-       - op: replace
-         path: /spec/template/spec/containers/0/env/2/valueFrom/configMapKeyRef/name
-         value: e101-config-map
+      - op: replace
+         path: /spec/template/spec/containers[name=backend-api]/env[name=SITE_NAME]/valueFrom/configMapKeyRef/name
+         value: backend-us-east-site-01-e101
+      - op: replace
+        path: /spec/template/spec/containers[name=backend-api]/env[name=TURBINE_NAME]/valueFrom/configMapKeyRef/name
+        value: backend-us-east-site-01-e101
+      - op: replace
+        path: /spec/template/spec/containers[name=backend-api]/env[name=TURBINE_INFO]/valueFrom/configMapKeyRef/name
+        value: backend-us-east-site-01-e101
      target:
        kind: Deployment
-       name: backend-api-patch
+       name: backend-api
        namespace: default
 
 
