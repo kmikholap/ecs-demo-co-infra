@@ -1,5 +1,20 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
+metadata:
+  name: ecs-demo-co-infra
+  namespace: default
+spec:
+  interval: 1m
+  url: https://github.com/kmikholap/ecs-demo-co-infra.git
+  ref:
+    branch: main
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ecs-demo-co-apps
+  namespace: default
 spec:
   interval: 1m
   url: https://github.com/kmikholap/ecs-demo-co-apps.git
