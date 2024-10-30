@@ -51,21 +51,10 @@ spec:
   path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
-  patches:
-   - patch: |
-      - op: replace
-         path: /spec/template/spec/containers[name=backend-api]/env[name=SITE_NAME]/valueFrom/configMapKeyRef/name
-         value: backend-us-east-site-01-e101
-      - op: replace
-        path: /spec/template/spec/containers[name=backend-api]/env[name=TURBINE_NAME]/valueFrom/configMapKeyRef/name
-        value: backend-us-east-site-01-e101
-      - op: replace
-        path: /spec/template/spec/containers[name=backend-api]/env[name=TURBINE_INFO]/valueFrom/configMapKeyRef/name
-        value: backend-us-east-site-01-e101
-     target:
-       kind: Deployment
-       name: backend-api
-       namespace: default
+  patchesStrategicMerge:
+  - ./sites/east-site/wt-monitoring-app/turbine-e101/e101-config.yaml
+
+
 
 
 
