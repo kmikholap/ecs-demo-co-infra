@@ -37,5 +37,6 @@ spec:
   prune: true
   timeout: 1m
   patches:
-     patch: ./e101-config.yaml
+    - target: ./e101-config-map.yaml
+    - path: ./e101-config.yaml
 
