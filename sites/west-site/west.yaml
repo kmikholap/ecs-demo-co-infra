@@ -1,0 +1,55 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ecs-demo-co-infra
+  namespace: default
+spec:
+  interval: 1m
+  url: https://github.com/kmikholap/ecs-demo-co-infra.git
+  ref:
+    branch: main
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ecs-demo-co-apps
+  namespace: default
+spec:
+  interval: 1m
+  url: https://github.com/kmikholap/ecs-demo-co-apps.git
+  ref:
+    branch: main
+
+---        
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: wt-demo-app-base
+  namespace: default
+spec:
+  interval: 10m
+  sourceRef:
+    kind: GitRepository
+    name: ecs-demo-co-apps
+  path: ./base/wt-monitoring-app
+  prune: true
+  timeout: 1m
+
+
+---        
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: wt-demo-app-west-w101
+  namespace: default
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: ecs-demo-co-apps
+  path: ./sites/west-site/wt-monitoring-app/turbine-w101
+  prune: true
+  timeout: 1m
+  dependsOn:
+    - name: wt-demo-app-base
