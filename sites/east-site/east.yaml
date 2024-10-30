@@ -51,6 +51,21 @@ spec:
   path: ./sites/east-site/wt-monitoring-app/turbine-e101
   prune: true
   timeout: 1m
+  patches:
+   - patch: |
+       - op: replace
+         path: /spec/template/spec/containers/0/env/0/valueFrom/configMapKeyRef/name
+         value: e101-config-map
+       - op: replace
+         path: /spec/template/spec/containers/0/env/1/valueFrom/configMapKeyRef/name
+         value: e101-config-map
+       - op: replace
+         path: /spec/template/spec/containers/0/env/2/valueFrom/configMapKeyRef/name
+         value: e101-config-map
+     target:
+       kind: Deployment
+       name: backend-api
+       namespace: default
 
 
 
