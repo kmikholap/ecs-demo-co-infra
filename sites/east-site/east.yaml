@@ -37,7 +37,7 @@ spec:
   prune: true
   timeout: 1m
   patches:
-    - path: ./e101-config.yaml
+    - path: e101-config.yaml
       target: 
         SITE_NAME: "us-east-onshore-site-01"
         TURBINE_NAME: "turbine-e101"
