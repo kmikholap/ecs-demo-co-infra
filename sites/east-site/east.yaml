@@ -54,7 +54,20 @@ spec:
   dependsOn:
     - name: wt-demo-app-base
   patches:
-    - path: ./e101-config.yaml
+    - patch: |
+        - op: replace
+          path: /spec/template/spec/containers/0/env/0/valueFrom/configMapKeyRef/name
+          value: backend-us-east-site-01-e101
+        - op: replace
+          path: /spec/template/spec/containers/0/env/1/valueFrom/configMapKeyRef/name
+          value: backend-us-east-site-01-e101
+        - op: replace
+          path: /spec/template/spec/containers/0/env/2/valueFrom/configMapKeyRef/name
+          value: backend-us-east-site-01-e101
+      target:
+        kind: Deployment
+        name: backend-api
+        namespace: default
 
 
 
