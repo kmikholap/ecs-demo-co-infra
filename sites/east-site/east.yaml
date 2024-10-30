@@ -53,6 +53,8 @@ spec:
   timeout: 1m
   dependsOn:
     - name: wt-demo-app-base
+  patchesStrategicMerge:
+    - ./e101-config.yaml
 
 
 
