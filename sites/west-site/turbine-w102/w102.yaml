@@ -12,25 +12,20 @@ spec:
   prune: true
   timeout: 1m
 
+
 ---        
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: wt-demo-app-east-e101
+  name: wt-demo-app-west-w102
   namespace: default
 spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
     name: ecs-demo-co-apps
-  path: ./sites/east-site/wt-monitoring-app/turbine-e101
+  path: ./sites/west-site/wt-monitoring-app/turbine-w102
   prune: true
   timeout: 1m
   dependsOn:
     - name: wt-demo-app-base
- 
-
-
-
-
-
