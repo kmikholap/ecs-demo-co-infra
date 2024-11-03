@@ -35,6 +35,20 @@ spec:
   path: ./base/wt-monitoring-app
   prune: true
   timeout: 1m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ecs-infra-base
+  namespace: default
+spec:
+  interval: 10m
+  sourceRef:
+    kind: GitRepository
+    name: ecs-demo-co-infra
+  path: ./base
+  prune: true
+  timeout: 1m
 
 ---        
 apiVersion: kustomize.toolkit.fluxcd.io/v1
